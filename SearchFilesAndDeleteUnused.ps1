@@ -1,4 +1,4 @@
-function Search-Image-In-Files {
+function Search-Image-In-Files-and-Delete-Unused {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory, HelpMessage = "Enter the folder where you have your images.")]
@@ -13,7 +13,7 @@ function Search-Image-In-Files {
         [Parameter(Mandatory, HelpMessage = "Enter your content extension (default is .md).")]
         [string]$ContentFileType,
 
-        [Parameter(Mandatory, HelpMessage = "Enter the results path.")]
+        [Parameter(Mandatory, HelpMessage = "Enter the results output path.")]
         [string]$Results,
 
         [string[]]$UsedImages
@@ -47,6 +47,8 @@ function Search-Image-In-Files {
         }
         else {
             Add-Content -Path $Results\UnsedImages.txt -Value $FileName
+            Remove-Item $_.FullName
+            Add-Content -Path $Results\UnsedImages.txt -Value "Image $FileName was removed."
         }
     }
 }
