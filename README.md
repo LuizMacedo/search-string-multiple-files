@@ -1,5 +1,5 @@
 # search-string-multiple-files
-Search multiple strings in multiple files and export it.
+Search multiple images in multiple files, check if it's being used or not, and delete them if not in use.
 
 ### Call Function:
-Search-Image-In-Files **"YOUR-IMAGE-FOLDER"** **"YOUR-MD-FILES-FOLDER"** "*.png" "*.md" **"YOUR-OUTPUT-FOLDER"**
+SearchFilesAndDeleteUnused **"YOUR-IMAGE-FOLDER"** **"YOUR-MD-FILES-FOLDER"** "*.png" "*.md" **"YOUR-OUTPUT-FOLDER"**
